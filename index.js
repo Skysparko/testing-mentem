@@ -1,9 +1,10 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = 8000;
-const hostname = '172.31.1.151';
-app.get("/affiliate/:id", (req, res) => {
-    const id = req.params.id
+
+app.get("/api/affiliate/:id", (req, res) => {
+  const id = req.params.id
   return res
     .header({
       "Content-Type": "application/json",
@@ -14,6 +15,12 @@ app.get("/affiliate/:id", (req, res) => {
     .send("maine beja");
 });
 
-app.listen(port,hostname, () => {
+app.use(express.static(path.join(__dirname, "./build")))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
