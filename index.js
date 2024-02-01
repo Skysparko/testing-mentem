@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = 8000;
+const port = 80;
 
 app.get("/api/affiliate/:id", (req, res) => {
   const id = req.params.id
