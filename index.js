@@ -9,7 +9,7 @@ app.get("/api/affiliate/:id", (req, res) => {
     .header({
       "Content-Type": "application/json",
       "Set-Cookie": `afffilateId=${id}; Path=/; Secure; SameSite=None;`,
-      "access-control-allow-origin": "*",
+      "access-control-allow-origin": "https://65-2-142-47.sslip.io",
       "Access-Control-Allow-Credentials": "true",
     })
     .send("maine beja");
