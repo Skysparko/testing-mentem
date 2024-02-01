@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 8000;
-
+const hostname = 'http://ec2-3-109-192-138.ap-south-1.compute.amazonaws.com/';
 app.get("/affiliate/:id", (req, res) => {
     const id = req.params.id
   return res
@@ -14,6 +14,6 @@ app.get("/affiliate/:id", (req, res) => {
     .send("maine beja");
 });
 
-app.listen(port, () => {
+app.listen(port,hostname, () => {
   console.log(`Example app listening on port ${port}`);
 });
