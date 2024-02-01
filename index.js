@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 8000;
-const hostname = 'http://ec2-3-109-192-138.ap-south-1.compute.amazonaws.com/';
+const hostname = '3.109.192.138';
 app.get("/affiliate/:id", (req, res) => {
     const id = req.params.id
   return res
